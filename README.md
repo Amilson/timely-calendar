@@ -125,6 +125,12 @@ I'm not too good with tests, but I'm studying and improving this part.
 
 ---
 
+## Themes
+
+By change the style-settings.json in src\assets\themes\style-settings.json, we can customize the theme used in the entire application.
+
+---
+
 ## Other project
 
 I developed a project with some awesome features like a npm package with an awesome UI
