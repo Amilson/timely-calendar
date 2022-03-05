@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This project was publish only in aws cloudfront + s3 by the following url:
 
--
+- https://d123ro4s7nqn2j.cloudfront.net
 
 ---
 
