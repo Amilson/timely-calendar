@@ -1,0 +1,18 @@
+<div class="d-flex flex-column flex-md-row justify-content-between toolbar-title">
+  <div class="d-flex flex-column full-width">
+    <shared-button type="tertiary" [routerLink]="['/app/main/calendars']">
+      Go Back
+    </shared-button>
+    <span class="title mt-3">
+      Month View
+    </span>
+    <span class="sub-title mb-5">
+      See your events month by month
+    </span>
+    <app-calendar-month-filters (onChange)="onChangeFilters($event)"
+      (onChange)="onChangeFilters($event)" [search]="_search">
+    </app-calendar-month-filters>
+  </div>
+</div>
+<shared-date-range-events [events]="_dateRangeEvents" [currentMonth]="_currentMonth">
+</shared-date-range-events>

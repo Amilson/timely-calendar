@@ -1,0 +1,61 @@
+:host {
+  width: 100%;
+
+  .card {
+    background: #ffffff;
+    border: 1px solid #ebebeb;
+    box-sizing: border-box;
+    border-radius: 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 300px;
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid #ebebeb;
+      padding: 24px;
+
+      .title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32px;
+        color: #2d2d33;
+      }
+
+      .description {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #9c9ca6;
+      }
+    }
+
+    .body {
+      padding: 24px;
+      overflow: auto;
+
+      .description {
+        display: flex;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #4b4a53;
+        margin-top: 12px;
+        text-align: justify;
+      }
+    }
+
+    .bottom {
+      display: inline-flex;
+      justify-content: space-between;
+      border-top: 1px solid #ebebeb;
+      padding: 12px;
+    }
+  }
+}

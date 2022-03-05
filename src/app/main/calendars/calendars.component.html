@@ -1,0 +1,12 @@
+<div class="row d-flex justify-content-center full-width">
+  <ng-container *ngIf="!_isLoading; else loading">
+    <div class="col-sm-4 mb-3">
+      <app-calendars-card-data [model]="_calendars"></app-calendars-card-data>
+    </div>
+  </ng-container>
+  <ng-template #loading>
+    <div class="col-sm-4 mb-3">
+      <app-calendars-card-data></app-calendars-card-data>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,10 @@
+<div class="row d-flex justify-content-center full-width">
+  <div class="col-sm-4 mb-3" *ngFor="let event of events">
+    <app-calendar-event-data [model]="event"></app-calendar-event-data>
+  </div>
+  <ng-container *ngIf="isLoading">
+    <div class="col-sm-4 mb-3" *ngFor="let load of [1,2,3]">
+      <app-calendar-event-data [model]="event"></app-calendar-event-data>
+    </div>
+  </ng-container>
+</div>

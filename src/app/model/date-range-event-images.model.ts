@@ -1,0 +1,56 @@
+/* eslint-disable camelcase */
+export interface DateRangeEventImageProperties {
+  width: number;
+  url: string;
+  height: number;
+}
+
+export class DateRangeEventImagesModel {
+  small: DateRangeEventImageProperties;
+
+  thumbnail: DateRangeEventImageProperties;
+
+  reference_id: number;
+
+  file_name: string;
+
+  created_at: Date;
+
+  medium: DateRangeEventImageProperties;
+
+  title: string;
+
+  deleted_at: Date;
+
+  sizes: {
+    small: DateRangeEventImageProperties;
+    thumbnail: DateRangeEventImageProperties;
+    medium: DateRangeEventImageProperties;
+    full: DateRangeEventImageProperties;
+  };
+
+  updated_at: Date;
+
+  file_hash: string;
+
+  id: number;
+
+  full: DateRangeEventImageProperties;
+
+  constructor(data?: any) {
+    if (!data) return;
+    this.small = data.small;
+    this.thumbnail = data.thumbnail;
+    this.reference_id = data.reference_id;
+    this.file_name = data.file_name;
+    this.created_at = data.created_at;
+    this.medium = data.medium;
+    this.title = data.title;
+    this.deleted_at = data.deleted_at;
+    this.sizes = data.sizes;
+    this.updated_at = data.updated_at;
+    this.file_hash = data.file_hash;
+    this.id = data.id;
+    this.full = data.full;
+  }
+}

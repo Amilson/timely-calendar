@@ -1,0 +1,13 @@
+<ng-container *ngIf="model?.length && model?.length > 1; else onlyOneImage">
+  <div class="slideshow-container">
+    <div class="slides fade" *ngFor="let image of model; let index = index; let lastIndex = last;">
+      <img [src]="image?.small?.url">
+      <span class="indicator">{{index+1}}/{{model?.length}}</span>
+    </div>
+    <a class="prev" (click)="onHandleNextPrev(-1)">&#10094;</a>
+    <a class="next" (click)="onHandleNextPrev(1)">&#10095;</a>
+  </div>
+</ng-container>
+<ng-template #onlyOneImage>
+    <img [src]="model[0]?.small?.url">
+</ng-template>

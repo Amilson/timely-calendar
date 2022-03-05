@@ -1,0 +1,29 @@
+<div class="row d-flex justify-content-between full-width">
+  <div class="col-sm-6">
+    <shared-button type="filter" (click)="filterDate.open()">
+      <span *ngIf="search?.startDate; else noDateRange">
+        {{ search?.startDate }} -
+        {{ search?.endDate }}
+      </span>
+      <ng-template #noDateRange>
+        Filter Dates
+      </ng-template>
+    </shared-button>
+    <shared-others-filters-choose #filterDate>
+      <shared-date-range-picker (onChange)="onHandleChangeDates($event)"></shared-date-range-picker>
+      <div class="d-flex justify-content-end full-width">
+        <shared-button type="secondary" (click)="onSubmit(filterDate.close.bind(filterDate))">
+          Filter
+        </shared-button>
+      </div>
+    </shared-others-filters-choose>
+    <shared-button type="secondary" (click)="onClearFilters()" class="ml-3">
+      Reset Filters
+    </shared-button>
+  </div>
+  <div class="col-sm-6 d-flex justify-content-end">
+    <shared-button type="primary" (click)="onOpenMonthEvents.next()">
+      View Month Events
+    </shared-button>
+  </div>
+</div>

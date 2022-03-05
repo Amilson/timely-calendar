@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="header">
+    <span class="title">{{model?.title}}</span>
+    <span class="description">{{model?.start_datetime}}</span>
+  </div>
+  <div class="body">
+    <ng-container *ngIf="model?.hasImages()">
+      <app-calendar-event-images 
+      [model]="model?.images">
+    </app-calendar-event-images>
+    </ng-container>
+    <span class="description">
+      <ng-container *ngIf="model?.description_short; else noDescription">
+        {{model?.description_short}}
+      </ng-container>
+      <ng-template #noDescription>
+        No description
+      </ng-template>
+    </span>
+  </div>
+  <div class="bottom">
+    <app-calendar-event-data-bottom></app-calendar-event-data-bottom>
+  </div>
+</div>

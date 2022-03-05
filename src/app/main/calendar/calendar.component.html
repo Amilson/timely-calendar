@@ -1,0 +1,19 @@
+<div class="d-flex flex-column flex-md-row justify-content-between toolbar-title">
+  <div class="d-flex flex-column full-width">
+    <shared-button type="tertiary" [routerLink]="['/app/main/calendars']">
+      Go Back
+    </shared-button>
+    <span class="title mt-3">
+      Postboard View
+    </span>
+    <span class="sub-title mb-3">
+      See your events with more detail
+    </span>
+  </div>
+</div>
+<app-calendar-filters (onOpenMonthEvents)="_showResume = !_showResume"
+  (onChange)="onChangeFilters($event)" [search]="_search"></app-calendar-filters>
+<app-calendar-events [events]="_events" [isLoading]="_isLoading"></app-calendar-events>
+<app-calendar-resume [events]="_events" *ngIf="_showResume" (onClose)="_showResume = !_showResume"
+  [@slideInRight]>
+</app-calendar-resume>

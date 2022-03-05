@@ -1,0 +1,38 @@
+@import 'src/assets/scss/components/breakpoints';
+
+:host {
+  position: absolute;
+  background: #fafafa;
+  border: 1px solid #d6d6d6;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 36px -8px rgba(88, 88, 88, 0.28);
+  border-radius: 16px !important;
+  padding: 24px;
+  width: 100%;
+  overflow-y: auto;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  margin-top: 32px;
+  display: none;
+
+  @include media-breakpoint('gt-xs') {
+    max-height: 400px;
+    width: 630px;
+  }
+
+  .close-button {
+    margin-left: 16px;
+    margin-right: -16px;
+    margin-top: -16px;
+
+    @include media-breakpoint('sm') {
+      float: unset;
+      margin-bottom: 8px;
+    }
+
+    @include media-breakpoint('xs') {
+      float: unset;
+    }
+  }
+}

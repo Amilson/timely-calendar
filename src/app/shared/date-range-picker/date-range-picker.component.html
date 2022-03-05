@@ -1,0 +1,66 @@
+<div class="date-range-picker-group">
+  <div class="date-range-picker first-date-range">
+    <div class="header">
+      <div class="calendar-title">
+        <shared-button class="calendar-previous" (click)="previousMonth()">
+          &#10094;
+        </shared-button>
+        <div class="month-year-title">
+          {{ _dateFirst.format('MM-YYYY') }}
+        </div>
+        <shared-button class="calendar-next" (click)="nextMonth()">
+          &#10095;
+        </shared-button>
+      </div>
+      <div class="week">
+        <span class="week-day" *ngFor="let day of ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']">
+          {{ day }}
+        </span>
+      </div>
+    </div>
+    <div class="body">
+      <div class="month-week" *ngFor="let week of _daysArrFirst">
+        <div class="month-day" (click)="onHandleSelectedDate(day)" [ngClass]="{
+            inactive: !day,
+            selected: isSelected(day),
+            today: isToday(day),
+            'first-selected': isFirstSelected(day),
+            'last-selected': isLastSelected(day)
+          }" *ngFor="let day of week" #divOne>
+          {{ day?.date() }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="date-range-picker second-date-range">
+    <div class="header">
+      <div class="calendar-title">
+        <div class="month-year-title">
+          {{ _dateSecond.format('MM-YYYY') }}
+        </div>
+        <shared-button class="calendar-next" (click)="nextMonth()">
+          &#10095;
+        </shared-button>
+      </div>
+      <div class="week">
+        <span class="week-day" *ngFor="let day of ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']">
+          {{ day }}
+        </span>
+      </div>
+    </div>
+    <div class="body">
+      <div class="month-week" *ngFor="let week of _daysArrSecond">
+        <div class="month-day" (click)="onHandleSelectedDate(day)" [ngClass]="{
+            inactive: !day,
+            selected: isSelected(day),
+            today: isToday(day),
+            'first-selected': isFirstSelected(day),
+            'last-selected': isLastSelected(day)
+          }" *ngFor="let day of week" #divOne>
+          {{ day?.date() }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

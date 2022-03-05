@@ -1,0 +1,57 @@
+<!--<ng-container *ngFor="let event of model; let index = index; else onlyOneEvent">
+  <shared-date-range-day-events [model]="event" *ngIf="index < 2">
+  </shared-date-range-day-events>
+</ng-container><ng-template #onlyOneImage>
+    <img [src]="model[0]?.small?.url">
+</ng-template>
+<ng-template #onlyOneEvent>
+  <img [src]="model[0]?.small?.url">
+</ng-template>
+-->
+
+<div class="slideshow-container-backdrop" (click)="onHandleVisability(false)"></div>
+<span class="close" (click)="onHandleVisability(false)">x</span>
+<ng-container *ngIf="model?.length && model?.length > 1; else onlyOneEvent">
+  <div class="slideshow-container">
+    <div class="slides fade" *ngFor="let event of model; let index = index; let lastIndex = last;">
+      <div class="details">
+        <div class="header">
+          <span class="title">{{ event?.title }}</span>
+          <span class="description">{{ event?.start_datetime }}</span>
+        </div>
+        <div class="body">
+          <span class="description">
+            <ng-container *ngIf="event?.description_short; else noDescription">
+              {{ event?.description_short }}
+            </ng-container>
+          </span>
+        </div>
+      </div>
+      <span class="indicator">
+        <a class="prev" (click)="onHandleNextPrev(-1)">&#10094;</a>
+        <a class="next" (click)="onHandleNextPrev(1)">&#10095;</a>
+        {{index+1}}/{{model?.length}}
+      </span>
+    </div>
+  </div>
+</ng-container>
+<ng-template #onlyOneEvent>
+  <div class="details" *ngIf="model[0] as event">
+    <shared-date-range-day-event-images [model]="event.images"></shared-date-range-day-event-images>
+    <div class="header">
+      <span class="title">{{ event?.title }}</span>
+      <span class="description">{{ event?.start_datetime }}</span>
+    </div>
+    <div class="body">
+      <span class="description">
+        <ng-container *ngIf="event?.description_short; else noDescription">
+          {{ event?.description_short }}
+        </ng-container>
+      </span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noDescription>
+  No description
+</ng-template>

@@ -1,0 +1,87 @@
+{
+  "extends": ["airbnb-base"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
+    "class-methods-use-this": "off",
+    "max-classes-per-file": ["error", 10],
+    "linebreak-style": ["error", "unix"],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": "always",
+        "ObjectPattern": { "multiline": true },
+        "ImportDeclaration": { "multiline": true },
+        "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "never",
+        "objects": "never",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
+    "import/extensions": [
+      "error",
+      {
+        "js": "never",
+        "ts": "never",
+        "module": "always",
+        "component": "always",
+        "interceptor": "always",
+        "service": "always",
+        "routing": "always",
+        "model": "always",
+        "pipe": "always",
+        "mjs": "never",
+        "jsx": "never"
+      }
+    ],
+    "max-len": ["error", { "code": 100, "ignoreStrings": true }],
+    "no-useless-constructor": "off",
+    "implicit-arrow-linebreak": ["error", "below"],
+    "operator-linebreak": [
+      "error",
+      "after",
+      { "overrides": { "+=": "before", "?": "ignore", ":": "ignore" } }
+    ],
+    "function-paren-newline": "off",
+    "no-case-declarations": "off",
+    "arrow-body-style": ["error", "always"],
+    "no-mixed-operators": [
+      "error",
+      { "groups": [["&", "|", "^", "~", "<<", ">>", ">>>"], ["&&", "||"]] }
+    ],
+    "no-param-reassign": "off",
+    "no-undef": "off",
+    "no-shadow": "off"
+  },
+  "globals": {
+    "window": true,
+    "document": true,
+    "File": true,
+    "FormData": true,
+    "location": true,
+    "Blob": true,
+    "HTMLInputElement": true,
+    "HTMLElement": true,
+    "Event": true,
+    "performance": true,
+    "FileReader": true,
+    "Image": true,
+    "HTMLCanvasElement": true,
+    "CanvasRenderingContext2D": true,
+    "google": true
+  }
+}

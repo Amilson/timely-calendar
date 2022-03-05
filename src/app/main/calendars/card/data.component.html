@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="header">
+    <span class="title">{{ model?.title }}</span>
+    <span class="description">id: {{ model?.id }}</span>
+  </div>
+  <div class="body">
+    <b>Product</b>: {{ model?.product }}
+  </div>
+  <div class="bottom">
+    <shared-button type="primary" color="success" (click)="onHandleDetails('posterboard')" *ngIf="model?.id">
+      View By Posterboard
+    </shared-button>
+    <shared-button type="primary" color="success" (click)="onHandleDetails('month')" *ngIf="model?.id">
+      View By Month
+    </shared-button>
+  </div>
+</div>

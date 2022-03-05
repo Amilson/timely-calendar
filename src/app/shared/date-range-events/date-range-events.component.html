@@ -1,0 +1,44 @@
+<div class="date-range-picker">
+  <div class="header">
+    <div class="calendar-title">
+      <shared-button (click)="previousMonth()" color="success">
+        &#10094;
+      </shared-button>
+      <div class="month-year-title">
+        {{ _date?.format('MM-YYYY') }}
+      </div>
+      <shared-button (click)="nextMonth()" color="success">
+        &#10095;
+      </shared-button>
+    </div>
+    <div class="week">
+      <span class="week-day" *ngFor="let day of ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']">
+        {{ day }}
+      </span>
+    </div>
+  </div>
+  <div class="body">
+    <div class="month-week" *ngFor="let week of _daysArr">
+      <div class="month-day" (click)="onHandleSelectedDate(day)" [ngClass]="{
+          inactive: !day,
+          selected: isSelected(day),
+          today: isToday(day)
+        }" *ngFor="let day of week" #divOne>
+        {{ day?.date() }}
+        <ng-container *ngIf="getEventsByDay(day) as events">
+          <shared-date-range-day-events-details [model]="events" #eventDetails>
+          </shared-date-range-day-events-details>
+          <div class="month-day-events" (click)="eventDetails.onShow.next(true)">
+            <ng-container *ngFor="let event of events; let index = index;">
+              <shared-date-range-day-events [model]="event" *ngIf="index < 2">
+              </shared-date-range-day-events>
+            </ng-container>
+            <ng-container *ngIf="events?.length > 3">
+              <span class="more-events">+{{ events?.length - 1 }}</span>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

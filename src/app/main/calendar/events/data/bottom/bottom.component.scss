@@ -1,0 +1,97 @@
+:host {
+  .shared-to-actions {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-size: inherit;
+    cursor: pointer;
+    position: relative;
+    outline: 0;
+    width: 1.5em;
+    height: 1.5em;
+    border: none;
+    border-radius: 4px;
+    padding: 0;
+    line-height: 2.571em;
+    margin: 0.3125em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.facebook {
+      background-color: #4267b2;
+
+      svg {
+        width: 0.5625em;
+        height: 1em;
+
+        path {
+          fill: #fff;
+        }
+      }
+    }
+
+    &.twitter {
+      background-color: #00acee;
+
+      svg {
+        width: 1em;
+        height: 1em;
+
+        path {
+          fill: #fff;
+        }
+      }
+    }
+
+    &.linkedin {
+      background-color: #006fa6;
+
+      svg {
+        width: 0.875em;
+        height: 1em;
+
+        path {
+          fill: #fff;
+        }
+      }
+    }
+
+    &.whatsapp {
+      background-color: #25d366;
+
+      svg {
+        width: 1em;
+        height: 1em;
+
+        path {
+          fill: #fff;
+        }
+      }
+    }
+
+    &.copy {
+      background-color: #607d8b;
+
+      svg {
+        width: 1em;
+        height: 1em;
+
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  .btn:hover {
+    opacity: 0.8;
+  }
+
+  .btn:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(1px);
+  }
+}

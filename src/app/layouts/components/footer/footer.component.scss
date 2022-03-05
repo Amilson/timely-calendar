@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-top: 1px solid #f5f5f5;
+  padding: 4px;
+
+  .logo {
+    margin-left: 4px;
+    height: 16px !important;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+    font-size: 12px;
+    text-align: center;
+    color: #4b4a53;
+    font-style: normal;
+    font-weight: 500;
+  }
+}
